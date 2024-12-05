@@ -47,6 +47,7 @@ dataset.info()
 # Usunięcie zbędnych kolumn
 dataset = dataset.drop(columns=['id','radius_worst','texture_worst','perimeter_worst','area_worst','smoothness_worst','compactness_worst','concavity_worst','concave points_worst','symmetry_worst','fractal_dimension_worst'])
 dataset = dataset.drop(columns=['radius_se','texture_se','perimeter_se','area_se','smoothness_se','compactness_se','concavity_se','concave points_se','symmetry_se','fractal_dimension_se'])
+dataset = dataset.drop(columns=['fractal_dimension_mean'])
 
 #usunąć wszystkie worst
 dataset.info()
@@ -106,11 +107,11 @@ sns.boxplot(x=y, y=x["compactness_mean"], ax=axes[2])
 plt.tight_layout()
 plt.show()
 
-fig, axes = plt.subplots(1,4,figsize=(12,4))
+fig, axes = plt.subplots(1,3,figsize=(12,4))
 sns.boxplot(x=y, y=x["concavity_mean"], ax=axes[0])
 sns.boxplot(x=y, y=x["concave points_mean"], ax=axes[1])
 sns.boxplot(x=y, y=x["symmetry_mean"], ax=axes[2])
-sns.boxplot(x=y, y=x["fractal_dimension_mean"], ax=axes[3])
+#sns.boxplot(x=y, y=x["fractal_dimension_mean"], ax=axes[3])
 plt.tight_layout()
 plt.show()
 
